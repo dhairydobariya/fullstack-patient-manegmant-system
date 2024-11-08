@@ -1,0 +1,1869 @@
+{
+	"info": {
+		"_postman_id": "a66e129b-0f99-40e9-a8d9-295e5f202f58",
+		"name": "pateint-manegment-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31742901"
+	},
+	"item": [
+		{
+			"name": "Forget method for All",
+			"item": [
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dhairydobariya007@gmail.com\",\r\n    \"phoneNumber\": \"8511623428\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/password/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"password",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"dhairydobariya007@gmail.com\",\r\n  \"phoneNumber\": \"8511623428\",\r\n  \"otp\": \"853158\"  // replace this with the OTP you receive\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/password/verify-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"password",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"dhairydobariya007@gmail.com\",\r\n  \"newPassword\": \"12345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/password/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"password",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin pannel",
+			"item": [
+				{
+					"name": "admin registration",
+					"item": [
+						{
+							"name": "admin registration",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"dhairy\",\r\n  \"lastName\": \"dobariya\",\r\n  \"email\": \"dhairydobariya@gmail.com\",\r\n  \"phoneNumber\": \"8511623428\",\r\n  \"password\": \"1232456\",\r\n  \"country\": \"india\",\r\n  \"state\": \"gujarat\",\r\n  \"city\": \"surat\",\r\n  \"hospital\": \"60e0c1272f8b3f001f16c8be\", // Replace with an actual ObjectId from your Hospital collection\r\n  \"role\": \"Admin\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/admin/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Hospital Crud",
+					"item": [
+						{
+							"name": "create Hospital",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"ganesha\",\r\n  \"address\": {\r\n    \"country\": \"India\",\r\n    \"state\": \"Gujarat\",\r\n    \"city\": \"Surat\",\r\n    \"street\": \"123 Medical Lane\"\r\n  },\r\n  \"phone\": \"+91-1234567890\",\r\n  \"website\": \"https://citycarehospital.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/admin/hospitals",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"hospitals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all hospital",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/hospitals",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"hospitals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Hospital by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/hospitals/670d3ed6ddc51da5436d459f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"hospitals",
+										"670d3ed6ddc51da5436d459f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update hospital by id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ganesha\" ,\r\n    \"address\": {\r\n        \"country\": \"india\",\r\n      \"state\": \"gujarat\",\r\n      \"city\": \"surat\",\r\n      \"street\": \"40 near kamrej\"\r\n    }  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/admin/hospitals/670d3ed6ddc51da5436d459f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"hospitals",
+										"670d3ed6ddc51da5436d459f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete hospita by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/hospitals/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"hospitals",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "admin Profile",
+					"item": [
+						{
+							"name": "Admin profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updte profile",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\":\"9979013848\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/admin/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change Admin pass",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\": \"1232456\",\r\n    \"newPassword\": \"123456\",\r\n    \"confirmPassword\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/admin/profile/changepass",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"profile",
+										"changepass"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "admin deshboard",
+					"item": [
+						{
+							"name": "deshboard data",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "search = all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/all?name=d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"all"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "d"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search = patient",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/patient?name=d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"patient"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "d"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search = doctor",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/doctor?name=d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"doctor"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "d"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "invoice page",
+					"item": [
+						{
+							"name": "create by admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"doctorId\": \"670d43dda5179769456c7697\",\r\n  \"patientId\": \"670d4488a5179769456c7699\",\r\n  \"hospitalId\": \"670d3ed6ddc51da5436d459f\",\r\n  \"doctorName\": \"dhairydoctor\",\r\n  \"patientName\": \"dhairy dobariya\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 30,\r\n  \"phoneNumber\": \"8511623428\",\r\n  \"paymentType\": \"cash\",\r\n  \"description\": [\r\n    { \"name\": \"Consultation Fee\", \"amount\": 1000, \"qty\": 1 },\r\n    { \"name\": \"Blood Test\", \"amount\": 200, \"qty\": 2 }\r\n  ],\r\n  \"email\": \"dhairy@gmail.com\",\r\n  \"additionalFields\": {\r\n    \"notes\": \"Patient advised to take full rest for 1 week.\",\r\n    \"referenceNo\": \"MAN-123456\",\r\n    \"detail\":\"updated\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/bill/manual-create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"bill",
+										"manual-create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Doctor Manegment",
+					"item": [
+						{
+							"name": "create-doctor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"doctor\",\r\n  \"qualification\": \"MBBS\",\r\n  \"specialtyType\": \"Cardiology\",\r\n  \"gender\": \"Male\",\r\n  \"experience\": 10,\r\n  \"checkupTime\": \"9:00 AM - 11:00 AM\",\r\n  \"workingTime\": \"9:00 AM - 5:00 PM\",\r\n  \"breakTime\": \"1:00 PM - 2:00 PM\",\r\n  \"phoneNumber\": \"+1-234-567-8901\",\r\n  \"email\": \"doctor@gmail.com\",\r\n  \"workon\":\"online\",\r\n  \"password\": \"123456\",\r\n  \"age\": 24,\r\n  \"address\": {\r\n    \"country\": \"india\",\r\n    \"state\": \"gujarat\",\r\n    \"city\": \"surat\",\r\n    \"zipCode\": \"394180\",\r\n    \"street\": \"123 Elm Street\"\r\n  },\r\n  \"onlineConsultationRate\": 50, \r\n  \"hospitalWebsite\": \"http://examplehospital.com\",\r\n  \"emergencyContactNumber\": \"+1-234-567-8902\",\r\n  \"doctorAddress\": \"456 Oak Street, Los Angeles, CA 90001\",\r\n  \"description\": \"Experienced cardiologist specializing in heart diseases.\",\r\n  \"signature\": \"http://example.com/signature.png\",\r\n  \"patientsHandled\": [],\r\n  \"role\": \"Doctor\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/admin/doctor-manegment/create-doctor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"doctor-manegment",
+										"create-doctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete doctor by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/doctor/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"doctor",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/doctor-manegment/doctor/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"doctor-manegment",
+										"doctor",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "doctor manegment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/doctor-manegment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"doctor-manegment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Patient-manegment",
+					"item": [
+						{
+							"name": "get today appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get upcoming appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get previous appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get canceled appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get appointment by id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Billing and payments",
+					"item": [
+						{
+							"name": "bill (monitoring , insurance , payment process )",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/bills",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"bills"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit bill",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"age\":11,\r\n    \"additionalFields\": {\r\n    \"notes\": \"Patient advised to take full rest for 1 week.\",\r\n    \"referenceNo\": \"MAN-123456\",\r\n    \"detail\": null\r\n  }\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/bill/update/670e96195d9d186223b6ab62",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"bill",
+										"update",
+										"670e96195d9d186223b6ab62"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create by admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"doctorId\": \"670d43dda5179769456c7697\",\r\n  \"patientId\": \"670d4488a5179769456c7699\",\r\n  \"hospitalId\": \"670d3ed6ddc51da5436d459f\",\r\n  \"doctorName\": \"dhairydoctor\",\r\n  \"patientName\": \"dhairy dobariya\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 30,\r\n  \"phoneNumber\": \"8511623428\",\r\n  \"paymentType\": \"cash\",\r\n  \"description\": [\r\n    { \"name\": \"Consultation Fee\", \"amount\": 1000, \"qty\": 1 },\r\n    { \"name\": \"Blood Test\", \"amount\": 200, \"qty\": 2 }\r\n  ],\r\n  \"email\": \"dhairy@gmail.com\",\r\n  \"additionalFields\": {\r\n    \"notes\": \"Patient advised to take full rest for 1 week.\",\r\n    \"referenceNo\": \"MAN-123456\",\r\n    \"detail\":\"updated\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/bill/manual-create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"bill",
+										"manual-create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Report & analysis",
+					"item": [
+						{
+							"name": "Report & Analyist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/admin/report-analytics",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"admin",
+										"report-analytics"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "doctor pannel",
+			"item": [
+				{
+					"name": "doctor profile",
+					"item": [
+						{
+							"name": "get profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/doctor/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update profile",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"dhairydobariya\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/doctor/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change password",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\": \"securePassword123\",\r\n    \"newPassword\": \"123456\",\r\n    \"confirmPassword\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/doctor/profile/changepass",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"profile",
+										"changepass"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "appointment manegment",
+					"item": [
+						{
+							"name": "all apointment for doctor",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/appointment/doctor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										"doctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "upcoming appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "previous appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "canceld appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "delete unavialble time for doctor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"startTime\": \"10:00\",\r\n  \"endTime\": \"12:00\",\r\n  \"date\": \"2024-10-04T00:00:00.000Z\" // Replace with the desired date\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/appointment/doctors/unavailable-times",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										"doctors",
+										"unavailable-times"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unavialble time for doctor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"startTime\": \"10:00\",\r\n  \"endTime\": \"12:00\",\r\n  \"date\": \"2024-10-04T00:00:00.000Z\" // Replace with the desired date\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/appointment/doctors/unavailable-times",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										"doctors",
+										"unavailable-times"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "patient records",
+					"item": [
+						{
+							"name": "patient records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/doctor/doctor-pannel/patient-records/monthly",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"doctor-pannel",
+										"patient-records",
+										"monthly"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get patient",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/doctor/doctor-pannel/patient-records/patient/670d4488a5179769456c7699",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"doctor-pannel",
+										"patient-records",
+										"patient",
+										"670d4488a5179769456c7699"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "preiscription manegment",
+					"item": [
+						{
+							"name": "crud of priscription",
+							"item": [
+								{
+									"name": "create priscription",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"medicine\": [\r\n      {\r\n        \"name\": \"Paracetamol\",\r\n        \"strength\": \"500mg\",\r\n        \"dose\": \"1 tablet\",\r\n        \"duration\": \"5 days\",\r\n        \"whenToTake\": \"After Food\",\r\n        \"additionalNote\": \"Take with water\"\r\n      }\r\n        ],\r\n       \"note\" :\"Patient is advised to rest for 2 days.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/prescriptions/670fe9d6cfe6f575ab58aee3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"prescriptions",
+												"670fe9d6cfe6f575ab58aee3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get all priscriptions",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/prescriptions",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"prescriptions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update priscription by id",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"note\":\"its empty note right now\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/prescriptions/67007bac6d27489b1c04d9d1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"prescriptions",
+												"67007bac6d27489b1c04d9d1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete prescription by appointment id",
+									"request": {
+										"method": "DELETE",
+										"header": []
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "add medical certificate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "medicalCertificate",
+											"type": "file",
+											"src": "/C:/Users/01/Pictures/Screenshots/Screenshot 2024-10-14 234319.png"
+										},
+										{
+											"key": "description",
+											"value": "\"Patient medical condition details\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/patientrecords/670d4488a5179769456c7699",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patientrecords",
+										"670d4488a5179769456c7699"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "priscription today and older",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/doctor/doctor-pannel/prescription/manage",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"doctor-pannel",
+										"prescription",
+										"manage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "appointment date vise",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/prescriptions?date=2024-10-16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"prescriptions"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2024-10-16"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "priscriptions  by appointment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/prescriptions/670fdcc2dace889ba2c15350",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"prescriptions",
+										"670fdcc2dace889ba2c15350"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "chat app",
+					"item": [
+						{
+							"name": "get patient detail",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "patinent pannel",
+			"item": [
+				{
+					"name": "patient registration",
+					"item": [
+						{
+							"name": "patient register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"d\",\r\n    \"lastName\": \"d\",\r\n    \"email\": \"d@gmail.com\",\r\n    \"phoneNumber\": \"8511623428\",\r\n    \"age\": 30,\r\n    \"height\": 180,\r\n    \"weight\": 75,\r\n    \"gender\": \"Male\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"dateOfBirth\": \"1993-01-15\",\r\n    \"address\": {\r\n        \"country\": \"USA\",\r\n        \"state\": \"California\",\r\n        \"city\": \"Los Angeles\",\r\n        \"street\": \"123 Elm St\"\r\n    },\r\n    \"password\": \"123456\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/patient/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patient",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Patient Profile",
+					"item": [
+						{
+							"name": "get Patient Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/doctor/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"doctor",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update patient profile",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": "/C:/Users/01/Pictures/Screenshots/Screenshot 2024-10-14 234319.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/patient/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patient",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "appointment page",
+					"item": [
+						{
+							"name": "scheduled appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "prvious appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "cancled appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "pending appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "one appointment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "personal health record",
+					"item": [
+						{
+							"name": "Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/patient/personal-health-record/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patient",
+										"personal-health-record",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "medical history",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/patient/personal-health-record/medicalhistory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patient",
+										"personal-health-record",
+										"medicalhistory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "prescription",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "one prescription",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "one medical history",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "All Appointment\\",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "medical certificate and description",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "prescription page",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/patient/prescription-page/all-prescription?startDate=2024-07-01&endDate=2024-11-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patient",
+										"prescription-page",
+										"all-prescription"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2024-07-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2024-11-01"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "bill page",
+					"item": [
+						{
+							"name": "paid and unpaid bills",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/patient/bill-page?paymentStatus=unpaid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"patient",
+										"bill-page"
+									],
+									"query": [
+										{
+											"key": "paymentStatus",
+											"value": "unpaid"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "appointment",
+			"item": [
+				{
+					"name": "patiend side api",
+					"item": [
+						{
+							"name": "book apointment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"specialty\": \"Cardiology\",\r\n  \"country\": \"India\",\r\n  \"state\": \"Gujarat\",\r\n  \"city\": \"Surat\",\r\n  \"hospital\": \"670d3ed6ddc51da5436d459f\", \r\n  \"doctor\": \"670fe96acfe6f575ab58aeda\", \r\n  \"appointmentType\": \"onsite\",\r\n  \"appointmentDate\": \"2024-10-16\",\r\n  \"appointmentTime\": \"24:00\",\r\n  \"patientIssue\": \"pain on leg\",\r\n  \"diseaseName\": \"legia\",\r\n  \"paymentStatus\": \"pending\",\r\n  \"updatedBy\": \"patient\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/appointment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all apointment for patient",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/appointment/patient",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										"patient"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "patient and doctor both api",
+					"item": [
+						{
+							"name": "get appointment by id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "update appointment",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"appointmentDate\": \"2024-10-22\",\r\n    \"appointmentTime\": \"14:00\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/appointment/67003ca776d0717e2a6d11a2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										"67003ca776d0717e2a6d11a2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cancle appointment",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/appointment/67003ca776d0717e2a6d11a2/cancle",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										"67003ca776d0717e2a6d11a2",
+										"cancle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete appointment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/appointment/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"appointment",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "unavialble time for doctor Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startTime\": \"10:00\",\r\n  \"endTime\": \"12:00\",\r\n  \"date\": \"2024-10-04T00:00:00.000Z\" // Replace with the desired date\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/appointment/doctors/unavailable-times",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"appointment",
+								"doctors",
+								"unavailable-times"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete unavialble time for doctor Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startTime\": \"10:00\",\r\n  \"endTime\": \"12:00\",\r\n  \"date\": \"2024-10-04T00:00:00.000Z\" // Replace with the desired date\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/appointment/doctors/unavailable-times",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"appointment",
+								"doctors",
+								"unavailable-times"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bill",
+			"item": [
+				{
+					"name": "Create bill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"paymentType\": \"insurance\",\r\n  \"insuranceCompany\": \"Star Health Insurance\",\r\n  \"insurancePlan\": \"Gold Plan\",\r\n  \"claimAmount\": 5000,\r\n  \"claimedAmount\": 4000,\r\n  \"description\": [\r\n    { \"name\": \"Consultation Fee\", \"amount\": 1200, \"qty\": 1 },\r\n    { \"name\": \"X-ray\", \"amount\": 500, \"qty\": 1 },\r\n    { \"name\": \"Medicine\", \"amount\": 150, \"qty\": 10 }\r\n  ]\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/bill/create-from-appointment/670d55d2182e8897a0f1b8bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"bill",
+								"create-from-appointment",
+								"670d55d2182e8897a0f1b8bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create by admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"doctorId\": \"670d43dda5179769456c7697\",\r\n  \"patientId\": \"670d4488a5179769456c7699\",\r\n  \"hospitalId\": \"670d3ed6ddc51da5436d459f\",\r\n  \"doctorName\": \"dhairydoctor\",\r\n  \"patientName\": \"dhairy dobariya\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 30,\r\n  \"phoneNumber\": \"8511623428\",\r\n  \"paymentType\": \"cash\",\r\n  \"description\": [\r\n    { \"name\": \"Consultation Fee\", \"amount\": 1000, \"qty\": 1 },\r\n    { \"name\": \"Blood Test\", \"amount\": 200, \"qty\": 2 }\r\n  ],\r\n  \"email\": \"dhairy@gmail.com\",\r\n  \"additionalFields\": {\r\n    \"notes\": \"Patient advised to take full rest for 1 week.\",\r\n    \"referenceNo\": \"MAN-123456\",\r\n    \"detail\":\"updated\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/bill/manual-create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"bill",
+								"manual-create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit bill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"age\":11,\r\n    \"additionalFields\": {\r\n    \"notes\": \"Patient advised to take full rest for 1 week.\",\r\n    \"referenceNo\": \"MAN-123456\",\r\n    \"detail\": null\r\n  }\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/bill/update/670e96195d9d186223b6ab62",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"bill",
+								"update",
+								"670e96195d9d186223b6ab62"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "teleconsulation",
+			"item": [
+				{
+					"name": "start video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/teleconsulation/start/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"teleconsulation",
+								"start",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "join",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat app",
+			"item": [
+				{
+					"name": "messages doctor and patient",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"email\":\"dhairydobariya@gmail.com\",\r\n\r\n    \"email\":\"dr@gmail.com\",\r\n    // \"email\":\"doctor@gmail.com\",\r\n\r\n\r\n    // \"email\":\"dhairy@gmail.com\",\r\n    // \"email\":\"d@gmail.com\",\r\n\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
